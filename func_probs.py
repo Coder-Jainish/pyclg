@@ -128,7 +128,7 @@ def prob12():
   r = int(input("Enter the radius of the circle: "))
   x1 = int(input("Enter the x-coordinate of the point: "))
   y1 = int(input("Enter the y-coordinate of the point: "))
-  d = ((x1 - x)*2 + (y1 - y)2)*0.5
+  d = ((x1 - x)*2 + (y1 - y)*2)*0.5
   if d < r:
     print("The point lies inside the circle")
   elif d == r:
