@@ -138,3 +138,4 @@ def sin():
   flr = 0
   for n in range(0, 30):
       flr += ((x)**((2*n)+1) * ((-1)**n)) /    factorial(2*n+1)
+  print(flr)
