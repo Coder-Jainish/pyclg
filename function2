@@ -1,0 +1,124 @@
+#1. Write a program that defines a function count_lower_upper() that accepts a string and calculates the number of uppercase and lowercase alphabets in it. It should return these values as a dictionary. Call this function for some sample string.
+def count_lower_upper():
+  str1 = input("Enter a string: ")
+  upper = 0
+  lower = 0
+  for i in str1:
+    if i.isupper():
+      upper += 1
+    elif i.islower():
+      lower += 1
+  dict1 = {"Upper": upper, "Lower": lower}
+  print(dict1)
+#2. Write a program that defines a function compute() that calculates the value of n + nn + nnn + nnnn, where n is digit received by the function. test the function for digits 4 to 7.
+def compute():
+  n = input("Enter a number: ")
+  sum = int(n) + int(n*2) + int(n*3) + int(n*4)
+  print(sum)
+
+#3. Write a program that defines a function create_array() to create and return a 3D array whose dimensions are passed to the function. Also initialize each element of this aray to a value passed to the function. e.g. create_array(3,4,5,n) where first three arguments are 3D array dimensions and 4thvalue is for initialing each value of the 3D array.
+def create_array():
+  x = int(input("Enter the number of rows: "))
+  y = int(input("Enter the number of columns: "))
+  z = int(input("Enter the number of layers: "))
+  n = int(input("Enter the value to initialize each element: "))
+  # 1st way
+  arr = [[[n for i in range(x)] for j in range(y)] for k in range(z)]
+  print(arr)
+  # 2nd way
+  list1 = []
+  for i in range(x):
+    list1.append(n)
+  list2 = [list1]*y
+  list3 = [list2]*z
+#4. Write a program that defines a function sum_avg() to accept marks of five subjects and calculates total and average. It should return directly both values.
+def sum_avg():
+  sum = 0
+  for i in range(5):
+    mark = int(input("Enter a mark: "))
+    sum += mark
+  avg = sum/5
+  return sum, avg
+
+#5. Pangram is a sentence that uses every letter of the alphabet. Write a program to check whether a given string is pangram or not, through a user-defined function ispangram(). Test the function with “The quick brown fox jumps over the lazy dog” or “Crazy Fredrick bought many very exquisite opal jewels”. Hint: use set() to convert the string into a set of characters present in the string and use <= to check whether alphaset is a subset of the given string.
+def ispangram():
+  str1 = "The quick brown fox jumps over the lazy dog"
+  str2 = "Crazy Fredrick bought many very exquisite opal jewels"
+  str1 = str1.lower()
+  str2 = str2.lower()
+  str1 = set(str1)
+  str2 = set(str2)
+  a = str1 - str2
+  #1st way
+  #if str1 <= str2:
+  #  print("Pangram")
+  #2nd way
+  if a == set():
+    print("Pangram")
+  else:
+    print("Not a pangram")
+  
+#6. Write a function to create and return a list containing tuples of the form (x,x2,x3) for all x between 1 and given ending value (both inclusive).
+def create_list():
+  x = int(input("Enter the ending value: "))
+  list1 = []
+  for i in range(1, x+1):
+    list1.append((i, i**2, i**3))
+  print(list1,type(list1[0]))
+
+#7. A palindrome is a word or phrase that reads the same in both directions. Write a program that defines a function ispalindrome() which checks whether a given string is a palindrome or not. Ignore spaces and case mismatch while checking for palindrome.
+def ispalindrome():
+  str1 = input("Enter a string: ")
+  str1 = str1.lower()
+  str1 = str1.replace(" ", "")
+  str2 = str1[::-1]
+  if str1 == str2:
+    print("Palindrome")
+  else:
+    print("Not a palindrome")
+
+#8. Write a program that defines a function convert() that receives a string containing a sequence of whitespace separated words and returns a string after removing all duplicate words and sorting them alphanumerically. Hint: use set(), list () , sorted(), join().
+def convert():
+  str1 = input("Enter a string: ")
+  str1 = str1.lower()
+  str1 = str1.replace(" ", "")
+  str1 = set(str1)
+  str1 = list(str1)
+  str1 = sorted(str1)
+  str1 = "".join(str1)
+  print(str1)
+
+#9. Write a program that defines a function count_alpha_digits() that accepts a string and calculates the number of alphabets and digits in it. It should return these values as a dictionary.
+def count_alpha_digits():
+  str1 = input("Enter a string: ")
+  alpha = 0
+  digit = 0
+  for i in str1:
+    if i.isalpha():
+      alpha += 1
+    elif i.isdigit():
+      digit += 1
+  dict1 = {"Alphabets": alpha, "Digits": digit}
+  print(dict1)
+
+#10. Write a program that defines a function called frequency() which computes the frequency of words present in a string passed to it. The frequencies should be returned in sorted order of words in the string.
+def frequency():
+    str1 = input("Enter a string: ")
+    str1 = str1.lower().replace(" ", "")
+    words = str1.split()
+    dict1 = {}
+    for i in words:
+        if i in dict1:
+            dict1[i] += 1
+        else:
+            dict1[i] = 1
+    print(dict1)
+#11. Write a function create_list() that creates and returns a list which is an intersection of two lists passed to it.
+def create_list2():
+  list1 = [1,2,3,4,5,6,7,8,9,10]
+  list2 = [2,4,6,8,10,12,14,16,18,20]
+  list3 = []
+  for i in list1:
+    if i in list2:
+      list3.append(i)
+  print(list3)
