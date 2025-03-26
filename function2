@@ -122,3 +122,69 @@ def create_list2():
     if i in list2:
       list3.append(i)
   print(list3)
+#1. If a positive integer is entered through the keyword, write a recursive function to obtain the prime factors of the number.
+def prime_factors(n):
+  if n <= 1:
+    return []
+  factors = []
+  for i in range(2, n+1):
+    if n % i == 0:
+      factors.append(i)
+      factors.extend(prime_factors(n // i))
+      break
+  return factors
+
+#2. A positive integer is entered through the keyboard. Write a function to find its binary equivalent of this number.
+def binary(n):
+  if n == 0:
+    return "0"
+  elif n == 1:
+    return "1"
+  else:
+    return binary(n // 2) + str(n % 2)
+
+#3. A string is entered through the keyboard. Write a recursive function that counts the number of vowels in this string.
+def count_vowels(string):
+  if len(string) == 0:
+    return 0
+  elif string[0] in "aeiouAEIOU":
+    return 1 + count_vowels(string[1:])
+  else:
+    return count_vowels(string[1:])
+
+#4. Write a recursive function that reverses the list of numbers that it receives.
+def reverse_list(lst):
+  if len(lst) == 0:
+    return []
+  else:
+    return [lst[-1]] + reverse_list(lst[:-1])
+  
+#5. Calculate ab where a and b received through the keyword using recursion.
+def ab(a, b):
+  if b == 0:
+    return 1
+  else:
+    return a * ab(a, b - 1)
+  
+#6. A list contains some negative and some positive values. Write a recursive function that sanitizes the list by replacing all negative numbers with 0.
+def sanitize_list(lst):
+  if len(lst) == 0:
+    return []
+  elif lst[0] < 0:
+    return [0] + sanitize_list(lst[1:])
+  else:
+    return [lst[0]] + sanitize_list(lst[1:])
+  
+#7. Write a recursive function to obtain average of all numbers present in a given list.
+def average(lst):
+  if len(lst) == 0:
+    return 0
+  else:
+    return sum(lst) / len(lst)
+  
+#8. Write a recursive function to obtain length of a given string.
+def length(string):
+  if string == "":
+    return 0
+  else:
+    return 1 + length(string[1:])
