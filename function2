@@ -188,3 +188,39 @@ def length(string):
     return 0
   else:
     return 1 + length(string[1:])
+#1. Define three functions fun(), disp() and msg(). Store them in a list and call them one by one in a loop.
+def fun():
+  print("fun()")
+def disp():
+  print("disp()")
+def msg():
+  print("msg()")
+list = [fun, disp, msg]
+for i in list:
+  i()
+
+#2. Suppose there are two lists, one containing numbers from 1 to 6, and other containing numbers from 6 to 1. Write a program to obtain a list that contains elements obtained by adding corresponding elements of the two lists. (hint: use map and lambda functions)
+def add_lists():
+  list1 = [1,2,3,4,5,6]
+  list2 = [6,5,4,3,2,1]
+  list3 = list(map(lambda x,y: x+y, list1, list2))
+#3. Generate the list of 10 different random numbers between -15 and 15. Create a new list by obtaining square of all numbers in a list.
+def square_list():
+  list1 = []
+  for i in range(10):
+    list1.append(random.randint(-15,15))
+  list2 = list(map(lambda x: x**2, list1))
+  print(list1)
+#4. Consider the following list:
+#lst = ['madam','Python',"malayalam",12321]
+#Write a program to print those strings which are palindromes.
+def palindromes():
+  lst = ['madam','Python',"malayalam",12321]
+  for i in lst:
+    if i == i[::-1]:
+      print(i)
+#5. A list contains names of Faculty Members. Write a program to filter out those names whose length is more than 8 characters.
+def filter_names():
+  list1 = ["Alice", "Bob", "Charlie", "David", "Eve", "Frank", "Grace", "Henry", "Ivy", "Jack"]
+  list2 = list(filter(lambda x: len(x) > 8, list1))
+  print(list2)
