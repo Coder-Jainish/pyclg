@@ -33,6 +33,21 @@ for rollno, details in students.items():
 
 3. Accept contact details from the user and create a vcard that we can directly store in our mobile.
 
+f = open("1.vcf", "w+")
+name = input("Enter Name:")
+mob = input("Enter Mobile No.:")
+email = input("Enter Email id:")
+f.write("BEGIN:VCARD\n")
+f.write("VERSION:3.0\n")
+f.write("FN:"+name+'\n')
+f.write("TEL; TYPE-CELL:"+mob+'\n')
+f.write("EMAIL:"+email+'\n')
+f.write("END:VCARD\n")
+f.close()
+#darshit shah
+#9825874525
+#darshit.shah@spt.pdpu.ac.in
+
 4. Create a specific subdirectory and copy one file from another subdirectory to this newly created 
 subdirectory.
 
