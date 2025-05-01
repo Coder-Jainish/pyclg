@@ -43,5 +43,5 @@ def prob5():
   dic2 = {'apple':2, 'banana':3, 'orange':4, 'mango':5, 'pineapple':6}
   total = 0
   for i in dic1:
-    total += dic1[i] * dic2[i]
+    total += dic1[i] * dic2.get(i,0)
   print(total)
