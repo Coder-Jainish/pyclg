@@ -158,7 +158,7 @@ class Weather:
     def __init__(self, parameters):
         self.parameters = parameters
     
- dodecyl    def __contains__(self, item):
+    def __contains__(self, item):
         print(item in self.parameters)
 
 weather = Weather(["sunny", "rainy", "cloudy"])
