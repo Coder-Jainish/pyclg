@@ -33,9 +33,9 @@ def tuple_sort():
 #5. Remove empty tuple(s) from the list of tuples.
 def tuple_delete():
   lists = [(1, 2, 3), (), (4, 5, 6), (), (7, 8, 9)]
-  // None as the first argument to filter() means it uses the default truthiness of each item.
+  #None as the first argument to filter() means it uses the default truthiness of each item.
 
-  //Empty containers like [], (), {}, "", and 0 are all treated as False.
+  #Empty containers like [], (), {}, "", and 0 are all treated as False.
   print(list(filter(None, lists)))
 
 #6. Modify an element of a tuple.
