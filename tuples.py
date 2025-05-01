@@ -5,7 +5,7 @@ def tuple_count():
   count_girl = 0
   for i in lists:
     if isinstance(i, tuple):
-      count_boy += 1
+      count_boy += len(i)
     else:
       count_girl += 1
   print(f"There are {count_boy} boys and {count_girl} girls in the list")
